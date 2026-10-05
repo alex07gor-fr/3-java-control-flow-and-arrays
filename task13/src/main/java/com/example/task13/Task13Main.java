@@ -12,8 +12,25 @@ public class Task13Main {
     }
 
     static int[] removeMoreThen1000(int[] arr) {
-        //todo напишите здесь свою корректную реализацию этого метода, вместо существующей
-        return  null;
+    // 1. Считаем, сколько элементов подходит
+    int count = 0;
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i] <= 1000) {
+            count++;
+        }
     }
-
+    
+    // 2. Создаем новый массив нужного размера
+    int[] result = new int[count];
+    
+    // 3. Заполняем его подходящими элементами
+    int j = 0;
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i] <= 1000) {
+            result[j] = arr[i];
+            j++;
+        }
+    }
+    return result;
+}
 }
